@@ -18,7 +18,8 @@ const main = async () => {
   await orm.getMigrator().up();
 
   const app = express();
-  const redis = require("redis");
+  // const redis = require("redis");
+  const redis = require("ioredis");
 
   const RedisStore = connectRedis(session);
   const redisClient = redis.createClient({ socket: { port: 4000 } });
